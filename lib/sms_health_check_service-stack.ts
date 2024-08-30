@@ -37,7 +37,7 @@ export class SmsHealthCheckServiceStack extends cdk.Stack {
     const lambdaFunction = new lambda.Function(this, 'SmsHealthCheckLambda', {
       runtime: lambda.Runtime.NODEJS_20_X,
       handler: 'index.handler',
-      code: lambda.Code.fromAsset('lambda'),
+      code: lambda.Code.fromAsset('lambda-ingestion'),
       environment: {
         REDIS_ENDPOINT: redisCluster.attrRedisEndpointAddress,
         REDIS_PORT: redisCluster.attrRedisEndpointPort,
